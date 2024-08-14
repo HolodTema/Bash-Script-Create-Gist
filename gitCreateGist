@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ -z "$1" ]
+then
+	echo "Error: This script requires 1 argument: ssh or http string of your remote repository."
+else
+	git init
+	git branch -m main
+	git remote add origin $1
+	git add .
+	git commit -m "Initial commit of Gist!"
+	git push origin main
+fi
+echo "Gist pushed!"
